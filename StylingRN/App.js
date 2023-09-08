@@ -5,8 +5,8 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>React Native Stylesheet Api</Text>
 
-      <View style={[styles.lightBlueBg, styles.box]}>Light Blue Box</View>
-      <View style={[styles.lightGreenBg, styles.box]}>Light Green Box</View>
+      <View style={[styles.lightBlueBg, styles.box ,styles.boxShadow]}>Light Blue Box</View>
+      <View style={[styles.lightGreenBg, styles.box ,styles.andriodShadow]}>Light Green Box</View>
     </View>
   );
 }
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   box: {
-    width: 100,
-    height: 100,
+    width: 250,
+    height: 250,
     // padding: 10,
     paddingHorizontal: 10,
     paddingVertical: 20,
@@ -42,7 +42,23 @@ const styles = StyleSheet.create({
   lightGreenBg: {
     backgroundColor: "lightgreen",
   },
+  boxShadow:{
+    shadowColor: "#333333",
+    shadowOffset: {
+      width:6,            // boxShadow only apples to IOS
+      height:6
+    },
+    shadowOpacity:0.6,
+    shadowRadius:4,
+  },
+  andriodShadow:{
+    elevation:10,
+    shadowColor: "#333333",
+  }
 });
 
 // Note: Border Radius in View is Application on Adnroid and IOS,
 //  while borderRadius in Text only apply on Android
+
+// boxShadow: h-offset v-offset blur spread color (IOS)
+// to apply shadow on andriod we use elivation property
